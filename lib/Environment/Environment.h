@@ -8,6 +8,9 @@
 #include <BaseAbs.h>
 #endif
 
+/* Forward declaration for rtModel */
+typedef struct tag_RTM_Environment_T RT_MODEL_Environment_T;
+
 #ifndef DEFINED_TYPEDEF_FOR_StatesBus_
 #define DEFINED_TYPEDEF_FOR_StatesBus_
 
@@ -60,6 +63,20 @@ typedef struct {
 typedef struct {
   EnvironmentBus Environmentb;         /* '<Root>/Environmentb' */
 } ExtY_Environment_T;
+
+/* Real-time Model Data Structure */
+struct tag_RTM_Environment_T {
+  const char_T * volatile errorStatus;
+};
+
+/* External inputs (root inport signals with default storage) */
+extern ExtU_Environment_T Environment_U;
+
+/* External outputs (root outports fed by signals with default storage) */
+extern ExtY_Environment_T Environment_Y;
+
+/* Real-time Model object */
+extern RT_MODEL_Environment_T *const Environment_M;
 
 class Environment : public BaseAbs
 {

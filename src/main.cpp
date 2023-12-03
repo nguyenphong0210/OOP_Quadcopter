@@ -8,9 +8,6 @@ Adafruit_MPU6050 mpu;
 
 std::vector<BaseAbs*> objects;
 
-// const int numObjects = 2;
-// BaseAbs* object[numObjects];
-
 Environment* envi = new Environment();
 
 void setup(void) {
@@ -24,5 +21,4 @@ void loop() {
   {
     object->Step();
   }
-  Serial.println("test");
 }
