@@ -39,7 +39,6 @@ void Environment::Step()
   Environment_Y.Environmentb.Gravity_ned[2] = 9.81;
   Environment_Y.Environmentb.MagneticField_ned[2] = 0.0;
   
-  Serial.println(Environment_Y.Environmentb.AtmosphereBus.pressure);
   /* End of Outputs for SubSystem: '<S1>/Environment (Constant)' */
 }
 
